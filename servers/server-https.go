@@ -77,7 +77,7 @@ func StartServerHTTPS(wg *sync.WaitGroup) {
 	go func() {
 		log.Printf("The HTTPS server has started on port %d\n", portTCP_HTTPS)
 		defer wg.Done()
-		defer log.Printf("The HTTP server has stopped\n")
+		defer log.Printf("The HTTPS server has stopped\n")
 		mux := http.NewServeMux()
 		mux.HandleFunc("/download/", httpDownload)
 		mux.HandleFunc("/upload", httpUpload)
