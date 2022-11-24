@@ -1,0 +1,1 @@
+docker build -t jrcamenzuli/network-performance-tester-server .

@@ -1,0 +1,1 @@
+docker run --rm -p9001:9001/udp -p9000:9000/udp -p53:53/udp -p53:53/tcp -p80:80/tcp -p443:443/tcp --name network-performance-tester-server -d network-performance-tester-server
