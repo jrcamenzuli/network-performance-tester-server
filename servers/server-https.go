@@ -82,7 +82,9 @@ func StartServerHTTPS(wg *sync.WaitGroup) {
 		mux.HandleFunc("/download/", httpDownload)
 		mux.HandleFunc("/upload", httpUpload)
 		portStr := fmt.Sprintf(":%d", portTCP_HTTPS)
-		err := http.ListenAndServeTLS(portStr, "server.crt", "server.key", nil)
+		server := &http.Server{Addr: portStr, Handler: mux}
+		server.SetKeepAlivesEnabled(false)
+		err := server.ListenAndServeTLS("server.crt", "server.key")
 		if err != nil {
 			panic(err)
 		}
