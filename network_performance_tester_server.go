@@ -11,7 +11,8 @@ func main() {
 	servers.StartServerHTTP(&wg)
 	servers.StartServerHTTPS(&wg)
 	servers.StartServerUDP(&wg)
-	servers.StartServerDNS(&wg)
+	servers.StartServerDns(&wg, servers.UDP)
+	servers.StartServerDns(&wg, servers.TCP)
 	servers.StartServerPing(&wg)
 	wg.Wait()
 }
