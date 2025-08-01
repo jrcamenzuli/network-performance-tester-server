@@ -1,1 +1,1 @@
-docker build -t jrcamenzuli/network-performance-tester-server .
+docker build --platform linux/amd64 -t jrcamenzuli/network-performance-tester-server .
